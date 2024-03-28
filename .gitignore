@@ -1,0 +1,13 @@
+models
+.DS_Store
+./.ipynb_checkpoints
+data
+dataset_cache/
+model_output_dir
+models
+weights
+*.npy
+*.pyc
+env/
+archive/
+__pycache__/
