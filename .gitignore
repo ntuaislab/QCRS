@@ -4,6 +4,7 @@ models
 data
 dataset_cache/
 model_output_dir
+analysis
 models
 weights
 *.npy

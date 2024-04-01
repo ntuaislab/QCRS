@@ -170,23 +170,12 @@ if __name__ == "__main__":
     os.makedirs(target_path, exist_ok=True)
 
     plot_certified_accuracy(
-            f"{target_path}/CIFAR_macer50_full", "Cifar10, MACER, $\sigma=.50$", 2.8, [
-                Line(ApproximateAccuracy("exp/exp1/cifar10/macer050_c_skip200"), "MACER", plot_fmt='--', color='r', width=1.6),
-                Line(ApproximateAccuracy("exp/exp1/cifar10/macer050_p_skip200_1219"), " +QCRS", plot_fmt='', color='r', width=1.7), # best
-                Line(ApproximateAccuracy("exp/exp1/cifar10/cohen050_c_skip20"), "Cohen", plot_fmt='--', color='b', width=1.6),
-                Line(ApproximateAccuracy("exp/exp1/cifar10/cohen050_p_skip20"), " +QCRS", plot_fmt='', color='b', width=1.7),
-                
+            f"{target_path}/cifar_qcrs", "CIFAR10, $\sigma=.50$", 2.8, [
+                Line(ApproximateAccuracy("exp/cifar10/cifar_exp"), "qcrs", plot_fmt='-', color='r', width=1.6),
             ])
     plot_certified_accuracy(
-        f"{target_path}/CIFAR_macer25_full", "Cifar10, MACER, $\sigma=.25$", 2.4, [
-            Line(ApproximateAccuracy("exp/exp1/cifar10/macer025_cohen500"), "MACER", plot_fmt='--', color='r', width=1.6),
-            Line(ApproximateAccuracy("exp/exp1/cifar10/macer025_0809_skip20"), " +QCRS", plot_fmt='', color='r', width=1.7),
-
-
-            Line(ApproximateAccuracy("exp/exp1/cifar10/cohen025_c_skip20_new"), "Cohen", plot_fmt='--', color='b', width=1.6),
-            Line(ApproximateAccuracy("exp/exp1/cifar10/cohen025_p_skip20_new"), " +QCRS", plot_fmt='', color='b', width=1.7),    
-        ])
-    
-    
+            f"{target_path}/imagenet_qcrs", "ImageNet, $\sigma=.50$", 2.8, [
+                Line(ApproximateAccuracy("exp/imagenet/imagenet_exp"), "qcrs", plot_fmt='-', color='r', width=1.6),
+            ])
     print(f'Save at {target_path}')
         
