@@ -18,7 +18,7 @@ def get_architecture(arch: str, dataset: str) -> torch.nn.Module:
     :return: a Pytorch module
     """
     if arch == "resnet50" and dataset == "imagenet":
-        model = torch.nn.DataParallel(resnet50(weights=False)).cuda()
+        model = torch.nn.DataParallel(resnet50(weights=None)).cuda()
         cudnn.benchmark = True
     elif arch == "cifar_resnet20":
         model = resnet_cifar(depth=20, num_classes=10).cuda()

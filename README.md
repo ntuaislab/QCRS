@@ -17,7 +17,6 @@ Build python enviroment:
 virtualenv env
 source env/bin/activate
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-# pip install torch torchvision torchaudio
 pip install -r requirements.txt
 ```
 Download base classifier weights from [COHEN](https://github.com/locuslab/smoothing) or [MACER](https://github.com/MacerAuthors/macer).
@@ -39,7 +38,7 @@ python code/certify_qcrs.py ./models/cifar10/resnet110/noise_0.50/checkpoint.pth
 # experiment sigma=.25
 python code/certify_qcrs.py ./models/imagenet/resnet50/noise_0.25/checkpoint.pth.tar imagenet_exp --dataset imagenet --skip 200 --sigma 0.25 --epsilon 0.01 --left 0.15 --right 0.40 --epsilon_step 0.8 --batch 1000
 # experiment sigma=.50
-python code/certify_qcrs.py ./models/cifar10/resnet110/noise_0.50/checkpoint.pth.tar imagenet_exp --dataset imagenet --skip 200 --sigma 0.50 --epsilon 0.01 --left 0.40 --right 0.60 --epsilon_step 0.4 --batch 1000
+python code/certify_qcrs.py ./models/imagenet/resnet50/noise_0.50/checkpoint.pth.tar imagenet_exp --dataset imagenet --skip 200 --sigma 0.50 --epsilon 0.01 --left 0.40 --right 0.60 --epsilon_step 0.4 --batch 1000
 ```
 
 ## MACER + QCRS
